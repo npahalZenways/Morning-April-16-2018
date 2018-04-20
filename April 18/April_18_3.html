@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS</title>
+
+	<!-- external style sheet -->
+	<link rel="stylesheet" type="text/css" href="./Styles.css">
+	<!-- Internal style sheet -->
+	<style type="text/css">
+		/*Tag name selector*/
+		p{
+			color: blue;
+		}
+		
+		/*selects all p tags inside div*/
+		div p{
+			color: red;
+		}
+
+		/*selects all p tags which are imemediate childs of div*/
+		div > p{
+			color: yellow;
+		}
+		
+		/*selects all p tags which are placed immediately after div*/
+		div + p{
+			font-weight: bold;
+			color: cyan;
+		}
+	
+	/*attribute selectors*/
+	[href] span{
+		color: pink;
+	}
+	[href="#"]{
+		background-color: yellow;
+	}
+	
+	/*:hover;*/
+
+	.psuedo p:last-child{
+		font-size: 30px;
+	}
+	.psuedo p:nth-child(even){
+		font-size: 30px;	
+	}
+	</style>
+</head>
+<body>
+
+	<span>This is span</span>
+	<!-- inline styles -->
+	<p>This is a para</p>
+	<p class="para">This is a para</p>
+	<p class="para">This is a para</p>
+	<p>This is a para</p>
+	<div class="mydiv">
+		<p class="para">
+			Para insidde div
+		</p>
+		<div></div>
+		<p class="para">
+			Para insidde div
+		</p>
+		<section>
+			<p>para inner</p>
+		</section>
+	</div>
+	<p>Paragrph immediately after div</p>
+	<p>Paragrph immediately after p</p>
+
+	<ul class="navigation">
+		<li>Home</li>
+		<li>About us</li>
+		<li>Contact</li>
+	</ul>
+
+	<br>
+	<ul class="navigation">
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+	</ul>
+
+	<a href="">Link 1  <span>hello</span></a>
+	<a href="#">Link 2</a>
+	<a href="#1">Link 3</a>
+
+	<div class="psuedo">
+		<p>para 1</p>
+		<p>para 2</p>
+		<p>para 3</p>
+		<p>para 4</p>
+		<p>para 5</p>
+		<p>para 6</p>
+	</div>
+</body>
+</html>
