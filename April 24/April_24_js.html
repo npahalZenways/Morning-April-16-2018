@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="para">
+		This is a para
+	</p>
+	<button onclick="abc()">Click</button>
+	<script type="text/javascript">
+		var p = document.getElementsByTagName('p');
+		console.log(p);
+		function abc(){
+			p[0].innerHTML = '<span>Span 1</span><span>this is changed using JS</span>';
+			var span = document.querySelector('p span:first-child');
+			span.style.color = 'red';
+		}
+
+		p[0].addEventListener('mouseenter', function(e){
+			e.target.innerText = 'changed by js';
+			e.target.style.backgroundColor = 'red';
+		})
+		p[0].addEventListener('mouseleave', function(e){
+			e.target.innerText = 'changed back to original';
+			e.target.style.backgroundColor = 'white';
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+	<p>This is a para</p>
+
+	<script type="text/javascript">
+		var x = 10;
+
+		var mypromise = new Promise(function(resolve , reject){
+			if(x == 10){
+				setTimeout(function(){
+					resolve();
+				}, 3000);
+			} else{
+				reject('oops rejected');
+			}
+		});
+
+		mypromise.then(function(response){
+			console.log(response);
+			return null	;
+		}).then(function(res1){
+			console.log(res1);
+			return 'heelo 111';
+		}).then(function(res2){
+			console.log(res2);
+		}).catch(function(error){
+			console.log('err', error);
+		});
+	</script>
+</body>
+</html>
