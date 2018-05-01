@@ -78,6 +78,12 @@ export module m1{
     export class abc{
 
     }
+
+    export module m3{
+        export class abcd{
+
+        }
+    }
 }
 
 export module m2{
