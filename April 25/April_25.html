@@ -4,6 +4,27 @@
 	<title></title>
 </head>
 <body>
-	<script type="text/javascript" src="script.js"></script>
+	<div>
+		<p>Name: <span></span>
+		</p>
+		<p>Email:
+		<span></span>
+		</p>
+		<p>Address: <span></span></p>
+
+		<div>
+			<input type="text" id="in">
+		</div>
+	</div>
+	<!-- <script type="text/javascript" src="script.js"></script> -->
+	<script type="text/javascript">
+		var heading = document.querySelector('#in');
+		function submitf() {
+			console.log(document.getElementById('in').value);
+		}
+		document.getElementById('in').addEventListener('input', function() {
+			console.log(document.getElementById('in').value)
+		})
+	</script>
 </body>
 </html>
