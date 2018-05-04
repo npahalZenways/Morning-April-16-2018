@@ -1,0 +1,27 @@
+<!-- One-way binding -->
+
+<!-- interpolation -->
+
+<p>
+    This is {{ componentName }}
+</p>
+
+<!-- property binding [] -->
+<img [src]="imgsrc" width="200px">
+
+<!-- event binding () -->
+<button (click)="componentName = 'hello'; printComponentName()">click</button>
+
+<!-- style binding -->
+<p [style.color]="color">
+    Dynamically styled paragraph
+</p>
+
+<!-- class binding -->
+<p [class.myclass]="componentName == 'hello'">
+    Dynamically class loaded
+</p>
+
+<!-- Two-way binding -->
+
+<input type="text" [ngModel]="componentName" (ngModelChange)="$event == 'hello'?color = 'green':color = 'purple'">
