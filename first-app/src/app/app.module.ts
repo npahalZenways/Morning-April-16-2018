@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { Custom } from './custom-component/custom';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from "@angular/forms";
+import { InBuiltDirectivesComponent } from './in-built-directives/in-built-directives.component';
 
 @NgModule({
   bootstrap: [AppComponent],  
@@ -12,7 +13,8 @@ import { FormsModule } from "@angular/forms";
     // components, directives, pipes
     AppComponent,
     Custom,
-    HeaderComponent
+    HeaderComponent,
+    InBuiltDirectivesComponent
   ],
   imports:[
     // modules

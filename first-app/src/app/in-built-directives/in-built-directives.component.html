@@ -1,0 +1,78 @@
+<!-- 
+  in-bilt-dircetives 
+  
+  Attribute directives 
+  ngClass 
+  ngSwitch 
+  ngNontBindable 
+  ngModel 
+  
+  Structural directives 
+  *ngIf 
+  *ngFor 
+  *ngSwitchCase 
+-->
+
+
+<!-- *ngIf-else -->
+
+<p *ngIf="mycondition; else elseBlock">
+  condition true
+</p>
+
+<ng-template #elseBlock>
+
+<p>
+  hello
+</p>
+
+</ng-template>
+
+<!-- *ngForOf -->
+<table style="display: inline-block;">
+  <tr *ngFor="let element of myArray; let i = index; let last = last; let first = first; let even = even; let odd = odd">
+    <td *ngIf="even">{{element}}</td>
+  </tr>
+</table>
+
+<table style="display: inline-block;">
+  <tr *ngFor="let element of myArray; let i = index; let last = last; let first = first; let even = even; let odd = odd">
+    <td *ngIf="odd">{{element}}</td>
+  </tr>
+</table>
+
+<button (click)="myArray.pop()">Pop</button>
+
+<table>
+
+  <tr *ngIf="!myArray.length; else msg">
+    <td>
+      No elements found
+    </td>
+  </tr>
+  <ng-template #msg>
+    <tr *ngFor="">
+      
+    </tr>
+  </ng-template>
+
+</table>
+
+<!-- ngSwitch -->
+
+<input type="text" [(ngModel)]="author">
+
+<div [ngSwitch]="author">
+  <p *ngSwitchCase="'Nitin'">Author is Nitin</p>
+  <p *ngSwitchCase="'Aman'">Author is Aman</p>
+  <p *ngSwitchDefault>No author found</p>
+</div>
+
+<p ngNonBindable>
+  we can interpolate like this {{author}}
+</p>
+
+<!-- ngClass = " { 'class-name' : condition } " -->
+<p [ngClass]="{'red': author == 'Nitin', 'blue': author == 'Aman'}">
+  ngClass binding
+</p>

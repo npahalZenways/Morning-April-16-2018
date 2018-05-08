@@ -24,4 +24,16 @@
 
 <!-- Two-way binding -->
 
-<input type="text" [ngModel]="componentName" (ngModelChange)="$event == 'hello'?color = 'green':color = 'purple'">
+<input type="text" (click)="print($event)" ngModel (ngModelChange)="$event == 'hello'?color = 'green':color = 'purple'">
+
+<!-- template referrence variable -->
+
+<p #mypara (click)="print(mypara)">
+    My pargraph
+</p>
+
+<input type="text" #myinput (input)="color = $event.target.value" [value]="color">
+
+<p>
+    color: {{color}}
+</p>
