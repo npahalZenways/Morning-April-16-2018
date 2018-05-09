@@ -1,4 +1,4 @@
-
+<!-- 
 
 <div style="border: 1px solid black">
 
@@ -7,4 +7,32 @@
 
 <div style="border: 1px solid red">
     <app-in-built-directives></app-in-built-directives>
+</div> -->
+
+<app-comp1></app-comp1>
+
+<!-- 
+<p style="text-align: center">{{title}}</p>
+<p [ngClass]="{'selected': selectedGame}">Selected Game: {{selectedGame?.gameName}}</p>
+
+<div *ngIf="!selectedGame; else playersBlock">
+    <div 
+    style="display: inline-block; width: 32%; border: 1px solid grey; padding: 5px; text-align: center; cursor: pointer;" 
+    *ngFor="let game of games"
+    (click)="selectedGame = game"
+    >
+        <p style="text-align: center">{{game.gameName}}</p>
+        <img width="300px" [src]="game.gameImage">
+    </div>
 </div>
+<ng-template #playersBlock>
+    <div>
+        <h2>{{selectedGame.gameName}}
+            <button style="float: right;" (click)="selectedGame = undefined">Back</button>
+        </h2>
+        <h4>Players: </h4>
+        <div style="padding-left: 10px">
+            <p *ngFor="let player of selectedGame.players">{{player}}</p>
+        </div>
+    </div>
+</ng-template> -->

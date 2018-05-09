@@ -1,0 +1,7 @@
+<p>
+  comp1 works!
+</p>
+
+<input type="text" [(ngModel)]="name">
+
+<app-comp2 [name]="name" gender="male" (myoutput)="printOutput($event)"></app-comp2>
