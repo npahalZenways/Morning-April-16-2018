@@ -7,6 +7,8 @@ import { FormsModule } from "@angular/forms";
 import { InBuiltDirectivesComponent } from './in-built-directives/in-built-directives.component';
 import { Comp1Component } from './component-details/comp1/comp1.component';
 import { Comp2Component } from './component-details/comp2/comp2.component';
+import { SharedModule } from './shared-module/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   bootstrap: [AppComponent],  
@@ -21,7 +23,9 @@ import { Comp2Component } from './component-details/comp2/comp2.component';
   imports:[
     // modules
     BrowserModule,
-    FormsModule
+    FormsModule,
+    SharedModule,
+    HttpClientModule
   ],
   providers: [
     // services

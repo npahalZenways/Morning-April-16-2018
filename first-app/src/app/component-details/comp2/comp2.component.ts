@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { MyFirstService } from '../../shared-module/service/myfirst.service';
 
 @Component({
   selector: 'app-comp2',
@@ -15,10 +16,12 @@ export class Comp2Component implements OnInit {
 
   @Output() myoutput = new EventEmitter();
 
-  constructor() { }
+  constructor( private myserv: MyFirstService ) { }
 
   ngOnInit() {
-    console.log(this.myname)
+    setInterval(()=>{
+      console.log('from comp 2 ', this.myserv.text)
+    }, 2000)
   }
 
 }

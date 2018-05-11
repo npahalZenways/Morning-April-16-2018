@@ -1,48 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 
 @Component({
   selector: 'app-initial',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Game selector';
+  headers;
+  params;
 
-  selectedGame;
+  constructor(
+    private http: HttpClient
+  ){
+    this.params = new HttpParams();
+    this.params.set('access_key', '09b72fe31175c35725b9176e60b350aa');
+  }
 
-  games = [
-    {
-      gameName: 'Football',
-      gameImage: 'http://images.all-free-download.com/images/graphicthumb/football_theme_picture_07_hd_pictures_168216.jpg',
-      players: [
-        'Ronaldo',
-        'Paulo',
-        'Lionel messi',
-        'Zlatan',
-        'Neymar'
-      ]
-    },
-    {
-      gameName: 'Cricket',
-      gameImage: 'http://p.imgci.com/db/PICTURES/CMS/235800/235819.jpg',
-      players: [
-        'Virat',
-        'Sehwag',
-        'Dhoni',
-        'Yuvraj',
-        'Piyush'
-      ]
-    },
-    {
-      gameName: 'Basketball',
-      gameImage: 'https://joburgeastexpress.co.za/wp-content/uploads/sites/34/2017/07/basketball.jpg',
-      players: [
-        'Stephen',
-        'Lebron',
-        'Kyrie',
-        'Kareem',
-        'Michael'
-      ]
-    }
-  ];
+  ngOnInit(){
+    this.http.get('https://data.fixer.io/api/latest?access_key=09b72fe31175c35725b9176e60b350aa', {
+      params: this.params
+    }).subscribe((res:any)=>{
+      console.log(res);
+    })
+  }
+
 }
