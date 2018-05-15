@@ -9,6 +9,11 @@ import { Comp1Component } from './component-details/comp1/comp1.component';
 import { Comp2Component } from './component-details/comp2/comp2.component';
 import { SharedModule } from './shared-module/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Route } from "@angular/router";
+import { LoginComponent } from './login/login.component';
+import { Error404Component } from './error-404/error-404.component';
+
+const routes: Route[] = []
 
 @NgModule({
   bootstrap: [AppComponent],  
@@ -19,13 +24,39 @@ import { HttpClientModule } from '@angular/common/http';
     InBuiltDirectivesComponent,
     Comp1Component,
     Comp2Component,
+    LoginComponent,
+    Error404Component,
   ],
   imports:[
     // modules
     BrowserModule,
     FormsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([{
+      path: '',
+      redirectTo: 'login',
+      pathMatch: 'full'
+    },{
+      path:'login',
+      component: LoginComponent,
+      children: [{
+        path: 'child',
+        component: InBuiltDirectivesComponent
+      }],
+      data:{
+        heading: 'login component'
+      }
+    },{
+      path: 'in-built-directives',
+      component: InBuiltDirectivesComponent
+    },{
+      path: 'admin',
+      loadChildren: './admin/admin.module#AdminModule'
+    },{
+      path: '**',
+      component: Error404Component
+    }])
   ],
   providers: [
     // services
