@@ -1,0 +1,14 @@
+<form #studyForm="ngForm" (ngSubmit)="studyForm.valid && submit()">
+    <label for="name">Name<span style="color: red">*</span>: </label>
+    <input type="text" ngModel #name="ngModel" name="nameinput" required minlength="5">
+    <div *ngIf="name.errors && submitClicked; else elseBlock">
+        <small style="color: red" *ngIf="name.errors.required && name.touched">This is required</small>
+        <small style="color: red" *ngIf="name.errors.minlength && name.touched">Minimum {{name.errors.minlength.requiredLength - name.errors.minlength.actualLength}} characters required</small>
+    </div>
+    <ng-template #elseBlock>
+        <div>
+            &nbsp;
+        </div>
+    </ng-template>
+    <button (click)="submitClicked = true">Submit</button>
+</form>

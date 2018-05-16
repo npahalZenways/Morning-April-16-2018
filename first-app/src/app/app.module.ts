@@ -54,6 +54,9 @@ const routes: Route[] = []
       path: 'admin',
       loadChildren: './admin/admin.module#AdminModule'
     },{
+      path:'forms',
+      loadChildren: './forms/forms.module#MyFormsModule'
+    },{
       path: '**',
       component: Error404Component
     }])
